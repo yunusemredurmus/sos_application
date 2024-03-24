@@ -1,9 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sos_application/core/utils/app_user_manager.dart';
 import 'package:sos_application/core/utils/base_provider.dart';
 import 'package:sos_application/feature/credential/dto/user_dto.dart';
+
+final credentialProvider =
+    ChangeNotifierProvider<CredentialProvider>((ref) => CredentialProvider());
 
 class CredentialProvider extends BaseProvider {
   ///Login Controller
@@ -45,6 +49,7 @@ class CredentialProvider extends BaseProvider {
         setLoading(false);
       }
     }
+    notifyListeners();
   }
 
   Future<void> register(BuildContext context) async {
@@ -99,5 +104,8 @@ class CredentialProvider extends BaseProvider {
         ),
       );
     }
+    notifyListeners();
   }
+
+  
 }
