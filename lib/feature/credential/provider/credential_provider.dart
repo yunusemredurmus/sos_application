@@ -57,11 +57,7 @@ class CredentialProvider extends BaseProvider {
     final password = registerPasswordController.text;
     final name = nameController.text;
     final surname = surnameController.text;
-    final weight = weightController.text;
-    final height = heightController.text;
-    final gender = genderController.text;
-    final bloodType = bloodTypeController.text;
-    final birthday = this.birthday.toString();
+
 
     if (email.isNotEmpty && password.isNotEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -80,11 +76,6 @@ class CredentialProvider extends BaseProvider {
           email: email,
           name: name,
           surname: surname,
-          weight: weight,
-          height: height,
-          birthday: DateTime.parse(birthday),
-          gender: gender,
-          bloodType: bloodType,
           password: password,
         );
 

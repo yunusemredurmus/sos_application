@@ -8,10 +8,11 @@ import 'package:sos_application/feature/home/pages/auth/register_page.dart';
 import 'package:sos_application/feature/home/pages/directory/directory_page.dart';
 import 'package:sos_application/feature/home/pages/home/home.dart';
 import 'package:sos_application/feature/home/pages/profile/profile_page.dart';
+import 'package:sos_application/feature/splash/screen/splash_page.dart';
 import 'package:sos_application/main.dart';
 
 enum RoutePath {
-  splash(path: 'splash'),
+  splash(path: '/splash'),
   login(path: '/login'),
   home(path: '/'),
   location(path: '/location'),
@@ -33,7 +34,7 @@ Provider<GoRouter> routeProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: RoutePath.splash.path,
         pageBuilder: (context, state) => const MaterialPage(
-          child: Text("data"),
+          child: SplashPage(),
         ),
       ),
       GoRoute(

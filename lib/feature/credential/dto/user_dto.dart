@@ -9,24 +9,24 @@ import 'package:sos_application/feature/credential/services/i_auth_service.dart'
 class UserDto {
   final String name;
   final String surname;
-  final String bloodType;
-  final String height;
-  final String weight;
-  final DateTime birthday;
+  final String? bloodType;
+  final String? height;
+  final String? weight;
+  final DateTime? birthday;
   final String email;
   final String password;
-  final String gender;
+  final String? gender;
 
   UserDto({
     required this.name,
     required this.surname,
-    required this.bloodType,
-    required this.height,
-    required this.weight,
-    required this.birthday,
+    this.bloodType,
+    this.height,
+    this.weight,
+    this.birthday,
     required this.email,
     required this.password,
-    required this.gender,
+    this.gender,
   });
 
   Map<String, dynamic> toMap() {
@@ -36,7 +36,7 @@ class UserDto {
       'bloodType': bloodType,
       'height': height,
       'weight': weight,
-      'birthday': birthday.millisecondsSinceEpoch,
+      'birthday': birthday.toString(),
     };
   }
 
